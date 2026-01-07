@@ -1,0 +1,24 @@
+#chessboard {
+    /* display: flex; using flexbox
+    flex-wrap: wrap; */
+    /* using grid */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr); /* 8 rows and 8 columns since 1fr is 1/8 of the container = 62.5px*/
+    width: 500px;
+    height: 500px; /* it can also be 801 x 801 */
+    background-color: blue;
+}
+
+#chessboard .tile { /* eatch tile is 500px/8 = 62.5px wide */
+    width: 62.5px;
+    height: 62.5px;
+}
+/* . for className and # for id */
+#chessboard .black-tile { 
+    background-color: #779556
+}
+
+#chessboard .white-tile {
+    background-color: #ebecd0;
+}
