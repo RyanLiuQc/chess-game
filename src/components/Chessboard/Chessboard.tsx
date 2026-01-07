@@ -1,4 +1,4 @@
-import react from 'react';
+import Tile from "../Tile/Tile"; // imports the function Tile from the Tile.tsx file
 import './Chessboard.css';
 
 const horizontalAxis = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
@@ -8,11 +8,15 @@ export default function Chessboard(){
     let board = [];
     for (let j=verticalAxis.length-1; j>=0; j--){
         for ( let i = 0; i<horizontalAxis.length; i++){
-            if ((i+j)%2 == 0){
-                board.push(<div className="black-tile"></div>) 
-            } else {
-                board.push(<div className="white-tile"></div>)
-            }
+            const number = j+i;
+
+            board.push(<Tile number={number}/>)
+
+            // if ((i+j)%2 == 0){
+            //     board.push(<Tile/>) 
+            // } else {
+            //     board.push(<Tile/>)
+            // }
         }
     }
     return <div id="chessboard">{board}</div>
