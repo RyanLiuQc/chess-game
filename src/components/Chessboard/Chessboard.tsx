@@ -14,33 +14,26 @@ interface Piece {
 
 const pieces: Piece[] = []; // similar to java, declaring the type of the elements in pieces\
 
+// looping to render pieces
+for (let p = 0; p<2; p++){
+    const type = (p === 0) ? "b" : "w"; //if p = 0 then type = "b". otherwise, type = "w"
+    const y_pos = (p === 0) ? 7 : 0; // at p = 0, we want to render the black pieces at the 7th row (highest row)
+    const y = y_pos;
+    pieces.push({image: `assets/images/rook_${type}.png`, x:0,y:y_pos}) // using back ticks
+    pieces.push({image: `assets/images/rook_${type}.png`, x:7, y}) // you can simply put y if the value and the field/parameter have the same variable name
+    pieces.push({image: `assets/images/knight_${type}.png`, x:1,y:y_pos})
+    pieces.push({image: `assets/images/knight_${type}.png`, x:6,y:y_pos})
+    pieces.push({image: `assets/images/bishop_${type}.png`, x:2,y:y_pos})
+    pieces.push({image: `assets/images/bishop_${type}.png`, x:5,y:y_pos})
+    pieces.push({image: `assets/images/king_${type}.png`, x:4,y:y_pos})
+    pieces.push({image: `assets/images/queen_${type}.png`, x:3,y:y_pos})
+}
+
 for (let i = 0; i<8; i++) {
     pieces.push({image: 'assets/images/pawn_b.png', x:i,y:6})
     pieces.push({image: 'assets/images/pawn_w.png', x:i,y:1})
 }
-pieces.push({image: 'assets/images/rook_b.png', x:0,y:7})
-pieces.push({image: 'assets/images/rook_b.png', x:7,y:7})
 
-pieces.push({image: 'assets/images/rook_w.png', x:0,y:0})
-pieces.push({image: 'assets/images/rook_w.png', x:7,y:0})
-
-pieces.push({image: 'assets/images/knight_b.png', x:1,y:7})
-pieces.push({image: 'assets/images/knight_b.png', x:6,y:7})
-
-pieces.push({image: 'assets/images/knight_w.png', x:1,y:0})
-pieces.push({image: 'assets/images/knight_w.png', x:6,y:0})
-
-pieces.push({image: 'assets/images/bishop_b.png', x:2,y:7})
-pieces.push({image: 'assets/images/bishop_b.png', x:5,y:7})
-
-pieces.push({image: 'assets/images/bishop_w.png', x:2,y:0})
-pieces.push({image: 'assets/images/bishop_w.png', x:5,y:0})
-
-pieces.push({image: 'assets/images/king_b.png', x:4,y:7})
-pieces.push({image: 'assets/images/queen_b.png', x:3,y:7})
-
-pieces.push({image: 'assets/images/king_w.png', x:4,y:0})
-pieces.push({image: 'assets/images/queen_w.png', x:3,y:0})
 
 
 export default function Chessboard(){
