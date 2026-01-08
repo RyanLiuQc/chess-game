@@ -1,4 +1,7 @@
 .tile { /* eatch tile is 500px/8 = 62.5px wide */
+    /* to make pieces centered in the tile. use place-content */
+    display: grid;
+    place-content: center;
     width: 62.5px;
     height: 62.5px;
 }
@@ -9,4 +12,8 @@
 
 .white-tile {
     background-color: #ebecd0;
+}
+
+.tile .img {
+    
 }
